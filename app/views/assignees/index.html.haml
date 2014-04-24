@@ -1,0 +1,17 @@
+%h1 Assignees
+
+- @assignees.each do |a|
+	Name:
+	= a.assignee_name
+	= button_to "Edit", edit_assignee_path(a), method: :get
+	= button_to "Delete", assignee_path(a), method: :delete
+	%br
+	%br
+
+=link_to "Add an assignee", new_assignee_path
+
+= form_tag(search_assignees_path, method: "get") do
+	= label_tag("Search for assignees")
+	= text_field_tag :search_assignee_name
+	= submit_tag "Search"
+

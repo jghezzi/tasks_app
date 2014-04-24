@@ -1,0 +1,32 @@
+%h1 Tasks
+
+- @tasks.each do |a|
+	Name:
+	= a.task_name
+	%br
+	Description
+	= a.description
+	%br
+	Due on:
+	= a.due_date
+	%br
+	Assigned To:
+	= a.assignee_id
+	%br
+	Task Status:
+	- if a.done = "true"
+		="DONE"
+	- else
+		="NOT DONE"
+	= button_to "Edit", edit_task_path(a), method: :get
+	= button_to "Delete", task_path(a), method: :delete
+	%br
+	%br
+
+=link_to "Add a new task", new_task_path
+
+/ = form_tag(search_tasks_path, method: "get") do
+/ 	= label_tag("Search for tasks")
+/ 	= text_field_tag :search_task_name
+/ 	= submit_tag "Search"
+

@@ -1,0 +1,15 @@
+= form_for @task, url: "/tasks/#{@task.id}", method: :put do |f|
+	= f.label "Task Name:"
+	= f.text_field :task_name
+	= f.label "Description:"
+	= f.text_field :description
+	= f.label "Date Due:"
+	= f.date_select :due_date
+	= f.label "Completed"
+	= f.radio_button :done, true
+	= f.label "To Be Done"
+	= f.radio_button :done, false
+	= f.label "Assigned To:"
+	= f.text_field :assignee_id
+	= f.submit "EDIT"
+

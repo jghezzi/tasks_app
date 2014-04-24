@@ -1,0 +1,5 @@
+= form_for @assignee, url: "/assignees/#{@assignee.id}", method: :put do |f|
+	= f.label "Name"
+	= f.text_field :assignee_name 
+
+	= f.submit "EDIT"
