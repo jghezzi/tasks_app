@@ -1,8 +1,9 @@
-%h1 Assignees - Search Results
+%h1 Tasks - Search Results
 
-- @search_results.each do |a|
+- @tasks.each do |a|
 	Name:
-	= a.assignee_name
+	= a.task_name
+	= a.assignee.assignee_name
 	
 	%br
 	%br

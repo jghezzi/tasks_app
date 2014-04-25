@@ -33,7 +33,8 @@ def destroy
 	end
 
 	def search
-		@search_results = Task.search(params[:search_task_name])
+		puts "======> PARAMS =======> #{params}"
+		@tasks = Task.search(params[:search])
 	end
 
 	private

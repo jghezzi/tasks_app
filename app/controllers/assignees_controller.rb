@@ -38,6 +38,11 @@ class AssigneesController < ApplicationController
 		@search_results = Assignee.search(params[:search_assignee_name])
 	end
 
+	# def search
+	# 	@assignees = Assignee.search(params[:search])
+	# 	render "results"
+	# end
+
 	private
 
 		def assignee_params

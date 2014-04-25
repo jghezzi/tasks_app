@@ -8,12 +8,15 @@ Rails.application.routes.draw do
   resources :tasks do
     collection do
       get :tasks_not_done
+      get 'search'
+      get 'results'
     end
   end
   
   resources :assignees do
     collection do
       get 'search'
+      get 'results'
     end
   end
 
