@@ -33,15 +33,25 @@ def destroy
 	end
 
 	def search
-		puts "======> PARAMS =======> #{params}"
 		@tasks = Task.search(params[:search])
 	end
+
+	def show_not_done_item
+		@task = Task.find(params[:id])
+	end
+
+	def update_item_to_done
+		@task = Task.find(params[:id])
+		if @task.update_attributes(task_params)
+			redirect_to "/tasks"
+		end	
+	end
+
 
 	private
 
 	def task_params
 		params.require(:task).permit!
 	end
-
 
 end

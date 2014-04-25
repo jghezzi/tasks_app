@@ -11,12 +11,19 @@
 	= a.due_date
 	%br
 	Task Status:
-	- if a.done = "true"
-		="DONE"
-	- else
+	- if a.done == false
 		="NOT DONE"
+	- else
+		="DONE"
 	= button_to "Edit", edit_task_path(a), method: :get
 	= button_to "Delete", task_path(a), method: :delete
+	= button_to "Mark Done", show_not_done_item_task_path(a), method: :get
+
+	/ - if a.done == false then 
+	/ 	=form_for a, url: "tasks/#{a.id}", action: "PUT" do |t|
+	/ 		=t.hidden_field :done, :value => true	
+	/ 		=t.submit "Mark Done"
+	
 	%br
 	%br
 

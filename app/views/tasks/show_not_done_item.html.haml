@@ -1,0 +1,13 @@
+= form_for @task, url: "/tasks/#{@task.id}/update_item_to_done", method: :put do |f|
+	= f.label "Task Name:"
+	= @task.task_name
+	= f.label "Description:"
+	= @task.description
+	= f.label "Date Due:"
+	= @task.due_date
+	= f.label "Completed"
+	= @task.done
+	= f.label "Assigned To:"
+	= @task.assignee_id
+	= f.hidden_field :done, :value => true	
+	= f.submit "Mark Done"

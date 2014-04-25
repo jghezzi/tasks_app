@@ -6,8 +6,12 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :tasks do
+    member do
+      put 'update_item_to_done'
+      get 'show_not_done_item'
+
+    end
     collection do
-      get :tasks_not_done
       get 'search'
       get 'results'
     end
