@@ -1,7 +1,37 @@
 
 #wrapper{
 	width: 50%;
+	min-height: 20em;
 	margin: 0 auto;
 	background-color: #e0e0e0;
 	padding: 1.5em;
+}
+
+label{
+	width: 45%;
+	float: left;
+	margin-right: 3%;
+	text-align: left;
+}
+
+input {
+	width:50%;
+	float:left;
+
+}
+
+.task-search { 
+	padding:1em;
+	border:1px solid #000; 
+}
+
+.centered { 
+	display:block;
+	text-align: center; 
+	margin-top:1em;
+}
+
+.btn-search{
+	width:40%;
+	margin:.5em 30%;
 }

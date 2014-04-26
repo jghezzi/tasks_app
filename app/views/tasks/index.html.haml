@@ -27,18 +27,19 @@
 	%br
 	%br
 
-=link_to "Add a new task", new_task_path
 
-= form_tag(search_tasks_path, method: "get") do
-	= label_tag("Search for assignees")
-	= text_field_tag "search[assignee_name]"
-	= label_tag("Search for tasks")
-	= text_field_tag "search[task_name]"
-	= label_tag("Date From:")
-	= text_field_tag "search[due_date_from]"
-	= label_tag("Date To:")
-	= text_field_tag "search[due_date_to]"
-	= label_tag("Task Complete?:")
-	= text_field_tag "search[done]"
-	= submit_tag "Search"
-
+%div(class="task-search")
+	= form_tag(search_tasks_path, method: "get") do
+		= label_tag("Search for assignees")
+		= text_field_tag "search[assignee_name]"
+		= label_tag("Search for tasks")
+		= text_field_tag "search[task_name]"
+		= label_tag("Date From:")
+		= text_field_tag "search[due_date_from]"
+		= label_tag("Date To:")
+		= text_field_tag "search[due_date_to]"
+		= label_tag("Task Complete?:")
+		= text_field_tag "search[done]"
+		= submit_tag "Search", class: 'btn-search'
+	%br
+	=link_to "Add a new task", new_task_path, class: 'centered'
